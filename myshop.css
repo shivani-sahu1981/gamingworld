@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: url(https://blockerx.net/wp-content/uploads/2022/02/Gaming.jpgq) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(9, 9, 58);
+}
+h1{
+    padding: 10px;
+    color: rgb(100, 81, 163);
+}
+ul{
+    list-style: none;
+} 
+
+.nav-links li,a,button {
+    padding: 10px;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none;
+    outline: none;
+    font-size: 20px;
+    color: white;
+}
+
+button{
+    margin: 5px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(100, 81, 163);
+}
