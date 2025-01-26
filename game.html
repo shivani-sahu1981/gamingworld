@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(49, 197, 197);
+            justify-content: center;
+            margin-left: 250px;
+            margin-top: 250px;
+        }
+        .container {
+            margin: 0;
+            padding: 0;
+            height: 150px;
+            width: 350px;
+            border-radius: 18px;
+            background-color: rgb(48, 130, 130);
+            text-align: center;
+        }
+        .box {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Guess the number!!!</h2>
+            <div class="innerbox">
+                <input type="number" id="number">
+                <button onclick="refreshGame()">Refresh</button><br><br>
+                <button onclick="guess()">Start</button><br><br>
+            </div>
+            <p id="ans"></p>
+            <p id="counter">Attempts Left: 5</p>
+        </div>
+    </div>
+
+    <script>
+        let danish = Math.floor(Math.random() * 10);
+        let count = 5;  // Number of attempts
+
+        function guess() {
+            let number = parseInt(document.getElementById("number").value);
+            if (isNaN(number)) {
+                alert("Please enter a valid number!");
+                return;
+            }
+
+            count--;
+            document.getElementById("counter").innerText = "Attempts Left: " + count;
+
+            if (count == 0) {
+                document.getElementById("ans").innerText = "Game Over! The number was " + danish;
+                return;
+            }
+
+            if (number === danish) {
+                document.getElementById("ans").innerText = "Yup, you won the game!";
+            } else if (number < danish) {
+                alert("Think higher!");
+            } else {
+                alert("Think lower!");
+            }
+        }
+
+        function refreshGame() {
+            danish = Math.floor(Math.random() * 10);
+            count = 5;
+            document.getElementById("counter").innerText = "Attempts Left: " + count;
+            document.getElementById("ans").innerText = "";
+            document.getElementById("number").value = "";
+        }
+    </script>
+</body>
+</html>
